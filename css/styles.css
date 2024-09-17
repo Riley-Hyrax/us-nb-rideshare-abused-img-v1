@@ -115,6 +115,11 @@ body{
         .navbar{
             width: 100%;
             overflow: hidden;
+            align-items: center;
+        }
+        .navbar > img{
+            height: 60px;
+
         }
         .container-1{
             flex-direction: column;
@@ -161,6 +166,9 @@ body{
         .footer{
             font-size: 8px;
         }
-        
+        .footer-text{
+            margin: auto;
+            margin-left: 5%;
+        }
     }
    
