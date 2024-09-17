@@ -142,8 +142,7 @@ body{
 
         .cta{
             width: 90%;
-            margin-top: 20px;
-            margin-left: 5%;
+            margin: auto
         }
 
         .testimonial{
