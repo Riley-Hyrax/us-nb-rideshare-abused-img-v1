@@ -4,10 +4,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Massive Lyft & Uber Lawsuit</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1169913391005362');
+        fbq('track', 'PageView');
+        </script>
+        <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=1169913391005362&ev=PageView&noscript=1"
+        /></noscript>
+        <!-- End Meta Pixel Code -->
+        
+        <script>
+            window.clickmagick_cmc = {
+                uid: '163849',
+                hid: '51630640',
+                cmc_project: 'US - RIDESHARE CLAIMS',
+                vid_info: 'on',
+            }
+        </script>
+        <script src='//cdn.clkmc.com/cmc.js'></script> 
 </head>
 <body>
+    <div id="loading-screen">
+        <div class="spinner"></div>
+    </div>
+    
     <nav class="navbar">
-        <img src="img/Justice_Comp_Logo_1.png" alt="Justice Comp Logo">
+        <img src="img/Justice_Comp_Logo_1.png" alt="Justice Comp Logo" loading="lazy">
     </nav>
     <h1 class="header-text">Act Now: Secure a $125,000 Settlement for Inappropriate Behavior in Uber/Lyft Rides!</h1><br>
 
@@ -22,7 +52,7 @@
             <p>If you or a loved one have experienced sexually inappropriate behavior in an Uber or Lyft, you qualify for a massive payout.</p>
             <p>You could qualify for a $125,000 cash settlement</p>
             <p>Take the first step towards justice and claim up to $125,000! See if you qualify in just 30 seconds!</p>
-            <button class="cta">Check Payout →</button>
+            <button class="cta"><a style="text-decoration: none;" href="https://quiz.justiceandcompensation.com/s/rideshare?cmc_vid=[cmc_vid]" class="btn btn-custom track-click" id="click">Check Payout →</a></button>
         </div>
     </div>
 
@@ -51,6 +81,45 @@
     
     </footer>
 
-    
+    <script>
+        // Function to get a specific query parameter from the URL
+        function getQueryParam(param) {
+            let urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+        
+        // Extract the 'utm_campaign' parameter from the URL
+        let utmCampaign = getQueryParam('utm_campaign');
+        
+        // Function to update links and forms with 'ad_name' instead of 'utm_campaign'
+        function updateLinksAndForms() {
+            if (utmCampaign) {
+                // Update all <a> tags
+                let links = document.querySelectorAll('a');
+                links.forEach(function(link)
+         {
+                    let currentHref = link.getAttribute('href');
+                    if (currentHref) {
+                        let separator = currentHref.includes('?') ? '&' : '?';
+                        link.setAttribute('href', currentHref + separator + 'ad_name=' + encodeURIComponent(utmCampaign));
+                    }
+                });
+        
+                // Update all form actions
+                let forms = document.querySelectorAll('form');
+                forms.forEach(function(form) {
+                    let currentAction = form.getAttribute('action');
+                    if (currentAction) {
+                        let separator = currentAction.includes('?') ? '&' : '?';
+                        form.setAttribute('action', currentAction + separator + 'ad_name=' + encodeURIComponent(utmCampaign));
+                    }
+                });
+            }
+        }
+        
+        // Run the function on page load
+        document.addEventListener('DOMContentLoaded', updateLinksAndForms);
+    </script>  
+    <script src="js/script.js"></script>
 </body>
 </html>
